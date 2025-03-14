@@ -1,0 +1,204 @@
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #f7f0ea;
+  border-radius: 20px;
+  width: 700px;
+  height: 740px;
+  text-align: center;
+  position: relative; /* 추가 */
+}
+
+.notice {
+  color: red;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center; /* 버튼 중앙 정렬 */
+  gap: 15px; /* 버튼 간격 */
+}
+
+button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#calendar {
+  width: 365px;
+  height: 351px;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#reserveBtn {
+  background: #2da679;
+  color: white;
+  border-radius: 20px;
+}
+
+#reserveBtn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* 예약 및 취소 버튼 크기 고정 */
+#reserveBtn,
+#closeModal {
+  width: 100px;
+  height: 45px;
+  font-size: 16px;
+}
+
+#closeModal {
+  background: #f29441;
+  color: white;
+  border-radius: 20px;
+}
+/* 제목 스타일 */
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 왼쪽 정렬 */
+  margin-top: 28px; /* 위에서 28px */
+  width: 100%;
+}
+
+/* 제목 */
+.title {
+  font-size: 26px;
+  color: #673d31;
+  margin-bottom: 28px; /* 아래쪽 28px 간격 */
+  text-align: left;
+  top: 28px; /* 위에서 28px */
+  left: 25px; /* 왼쪽에서 25px */
+  padding-left: 25px;
+}
+
+/* 제목 아래 가로줄 */
+.title-line {
+  display: block;
+  width: 100%; /*좌우 25px씩 여백을 제외한 전체 너비 */
+  height: 1px;
+  background-color: #673d31;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agreeCheck {
+  font-size: 20px;
+  color: #673d31;
+}
+#agreeCheck {
+  width: 20px;
+  height: 20px;
+  border-color: #673d31;
+}
+
+/* FullCalendar 전체 스타일 수정 */
+.fc {
+  background-color: #f7f0ea; /* 배경색 변경 */
+  border-radius: 10px; /* 테두리 둥글게 */
+  padding: 10px;
+}
+
+/* 헤더 스타일 수정 */
+.fc-toolbar {
+  background-color: none; /* 헤더 배경색 */
+  display: flex;
+  justify-content: space-between; /* 양쪽 정렬 */
+  align-items: center;
+  position: relative;
+}
+
+/* 요일 헤더 스타일 */
+.fc-col-header-cell {
+  background-color: none; /* 요일 배경색 */
+  color: #333; /* 글자색 */
+  font-weight: bold;
+}
+
+/* 중앙에 오늘 날짜 정렬 */
+.fc-toolbar-title {
+  font-size: 16px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 이전(<) & 다음(>) 버튼 배경색 제거 */
+.fc-prev-button {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #afafaf !important; /* 아이콘 색상 유지 */
+  font-size: 20px;
+  pointer-events: none;
+}
+.fc-next-button {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #000 !important; /* 아이콘 색상 유지 */
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* 날짜 셀 스타일 */
+.fc-daygrid-day {
+  background-color: none; /* 기본 배경 */
+  border: 1px solid #673d31; /* 테두리 */
+  transition: 0.3s;
+}
+
+.reservationDate {
+  color: #673d31;
+}
+/* 날짜 hover 효과 */
+.fc-daygrid-day:hover {
+  background-color: #f0e0c5; /* 마우스 오버 시 색상 변경 */
+  cursor: pointer;
+}
+
+/* 예약 가능 날짜 (기본) */
+.fc-daygrid-day:not(.fc-day-other) {
+  background-color: none;
+}
+.fc .fc-toolbar-title {
+  font-size: 16px;
+  margin: 0px;
+}
+
+/* 예약 불가능한 날짜 */
+.fc-daygrid-day[data-date="2025-03-01"],
+.fc-daygrid-day[data-date="2025-03-02"],
+.fc-daygrid-day[data-date="2025-03-18"] {
+  background-color: #d94436 !important; /* 빨간색 */
+  color: #fff;
+  pointer-events: none; /* 클릭 방지 */
+}
+
+/* 선택된 날짜 스타일 */
+.fc-day-selected {
+  background-color: #1d6093 !important;
+  color: white !important;
+  font-weight: bold;
+}
