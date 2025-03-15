@@ -133,7 +133,37 @@ button {
 .fc-col-header-cell {
   background-color: none; /* 요일 배경색 */
   color: #333; /* 글자색 */
+  font-size: 11.5px;
   font-weight: bold;
+  height: 53px !important;
+  width: 53px;
+  min-height: 53px !important;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* 날짜 셀 크기 조정 */
+.fc-daygrid-day-frame {
+  height: 53px !important; /* 날짜 칸 높이 */
+  width: 53px;
+  min-height: 53px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11.5px;
+  overflow: hidden;
+}
+
+.fc-daygrid-day {
+  width: 53px !important; /* 날짜 칸 너비 */
+  min-width: 53px !important;
+  height: 53px !important;
+  min-height: 53px !important;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 11.5px;
+  overflow: hidden;
 }
 
 /* 중앙에 오늘 날짜 정렬 */
@@ -171,6 +201,8 @@ button {
 
 .reservationDate {
   color: #673d31;
+  font-size: 18px;
+  margin-bottom: 27px;
 }
 /* 날짜 hover 효과 */
 .fc-daygrid-day:hover {
@@ -201,4 +233,46 @@ button {
   background-color: #1d6093 !important;
   color: white !important;
   font-weight: bold;
+}
+
+/* 예약 상태 표시 전체 컨테이너 */
+.reservation-status {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  align-items: center;
+  gap: 48px; /* 상태 간격 */
+  margin-top: 12px; /* 캘린더와의 간격 */
+  margin-bottom: 42px;
+}
+
+/* 개별 상태 (예약가능 / 예약불가 / 예약선택) */
+.status {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #673d31;
+}
+
+/* 상태 박스 공통 스타일 */
+.status-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+/* 예약 가능 */
+.available {
+  border: 1px solid #673d31;
+  background-color: transparent;
+}
+
+/* 예약 불가 */
+.unavailable {
+  background-color: #d94436;
+}
+
+/* 예약 선택 */
+.selected {
+  background-color: #1d6093;
 }
