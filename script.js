@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       center: "title", // 오늘 날짜 (가운데)
       right: "next", // ">" 버튼 (오른쪽)
     },
+    dayCellContent: function (arg) {
+      return arg.date.getDate(); // '일'을 제외하고 숫자만 표시
+    },
     dateClick: function (info) {
       let clickedDate = info.dateStr;
 
